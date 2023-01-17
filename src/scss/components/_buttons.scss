@@ -1,0 +1,65 @@
+.btn{
+	display: inline-block;
+	font-family: $btn-font-family;
+	font-weight: 400;
+	// color: $dark;
+	text-align: center;
+	text-decoration: none;
+	white-space: null;
+	vertical-align: middle;
+  	user-select: none;
+	background-color: transparent;
+	border: $border-width solid transparent;
+	cursor: pointer;
+	@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+	transition: .5s;
+	transform:      color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+	&:focus,
+	&.focus {
+	  outline: 0;
+	  box-shadow: $btn-focus-box-shadow;
+	}
+	i{
+		margin-right: 4px;
+	}
+	&-full{
+		display: block;
+		width: 100%;
+	}
+}
+
+@each $btn-name, $btn-color in $color-themes {
+
+	.btn-#{$btn-name}{
+		background: $btn-color;
+		border: $border-width solid lighten($btn-color ,10%);
+		color: $white !important;
+		&:hover{
+			background: darken($btn-color, 5%);
+			transition: .5s;
+			color: $white !important;
+		}
+	}
+
+	.btn-#{$btn-name}-o{
+
+		background: transparent;
+		color: $btn-color !important;
+		border: $border-width solid $btn-color;
+		&:hover{
+			background: darken($btn-color, 5%);
+			transition: .5s;
+			color: $white !important;
+		}
+	}
+
+}
+// .button-lg {
+// 	@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius);
+// }
+
+// .button-sm {
+// 	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius);
+// }
+

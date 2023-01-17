@@ -1,0 +1,14 @@
+.link{
+    text-decoration: none;
+    font-size: 14px;
+    margin: 10px 0;
+    transition: $transition;
+    &:hover{
+        text-decoration: underline;
+        transition: $transition;
+    }
+
+    &-white{
+        color: $white;
+    }
+}

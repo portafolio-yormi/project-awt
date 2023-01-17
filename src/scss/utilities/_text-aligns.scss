@@ -1,0 +1,5 @@
+@each $value in $text-aligns {
+    .text-#{$value}{
+        text-align: $value;
+    }
+} 

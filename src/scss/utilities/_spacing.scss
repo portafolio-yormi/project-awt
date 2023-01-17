@@ -1,0 +1,29 @@
+@each $prop, $abbrev in (margin: m, padding: p) {
+    @each $size, $length in $spacers {
+        //* Margin - Padding  Top - Right - Bottom - Left
+        .#{$abbrev}-#{$size}{ #{$prop}: $length !important}
+
+        //* Margin - Padding  Top and Bottom 
+        .#{$abbrev}y-#{$size}{
+            #{$prop}-top: $length !important; 
+            #{$prop}-bottom: $length !important
+        }
+
+        //* Margin - Padding  Left and Right 
+        .#{$abbrev}x-#{$size}{
+            #{$prop}-left: $length !important; 
+            #{$prop}-right: $length !important
+        }
+        //* Margin - Padding  Top 
+        .#{$abbrev}t-#{$size}{#{$prop}-top: $length !important; }
+        
+        //* Margin - Padding  Right 
+        .#{$abbrev}r-#{$size}{ #{$prop}-right: $length !important}
+        
+        //* Margin - Padding  Bottom 
+        .#{$abbrev}b-#{$size}{ #{$prop}-bottom: $length !important}
+        
+        //* Margin - Padding  Bottom 
+        .#{$abbrev}l-#{$size}{ #{$prop}-left: $length !important}
+    }
+}

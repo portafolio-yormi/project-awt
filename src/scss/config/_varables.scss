@@ -1,0 +1,56 @@
+
+//*  Setting Fonts
+$btn-font-family: Arial, Helvetica, sans-serif;
+$text-aligns: center, left, right, justify;
+
+//*  Setting Fonts
+$transition: .3s;
+$transition-sm: .5s;
+$transition-lg: .7s;
+
+// * Backgrounds
+//*  Setting Buttons
+$component-active-bg:           $secondary !default;
+$input-btn-border-radius:       4px !default; 
+$input-btn-padding-y:           .7rem !default;
+$input-btn-padding-x:           .75rem !default;
+$input-btn-font-size:           1rem !default;
+$input-btn-focus-width:         .2rem !default;
+$input-btn-focus-color:         rgba($component-active-bg, .25) !default;
+$input-btn-focus-box-shadow:    0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
+
+
+$border-width:                  1px !default;
+$btn-line-height:               1;
+$btn-border-radius:             $input-btn-border-radius;
+$btn-padding-y:                 $input-btn-padding-y;
+$btn-padding-x:                 $input-btn-padding-x;
+$btn-font-size:                 $input-btn-font-size !default;
+$btn-focus-box-shadow:          $input-btn-focus-box-shadow !default;
+
+//* Inpunt
+$input-border-radius:           $input-btn-border-radius;
+$input-padding-y:               $input-btn-padding-y;
+$input-padding-x:               $input-btn-padding-x;
+$input-line-height:             1.5 !default;
+
+$color-themes: (
+    'primary': $primary ,
+    'secondary': $secondary ,
+    'orange': $orange,
+);
+
+// *  Setting Margis and Paddings
+$spacer: 1rem !default; //TODO Valor por el cual se calcula
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
+  ),
+  $spacers
+);

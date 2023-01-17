@@ -1,0 +1,19 @@
+.footer-sm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    color: $white;
+    background: $blue-dark;
+    margin-top: auto;
+    p{
+        margin: 0;
+    }
+}
+
+.sticky-footer{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}

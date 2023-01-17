@@ -1,0 +1,5 @@
+@each $name, $value in $color-themes{
+    .bg-#{$name}{
+        background: $value;
+    }
+} 

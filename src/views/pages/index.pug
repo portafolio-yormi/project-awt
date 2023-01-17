@@ -1,0 +1,26 @@
+extends ../layouts/layout-main.pug
+block vars 
+    -var TiitleMain= "Login | ATW";
+block main
+    body.bg-primary.sticky-footer
+        //- * Login
+        .login
+            .login-container
+                img.logo(src="img/logo-atw.png", alt="")
+
+                form.form(action='/')
+
+                    input#password.input.input-password.mt-2(type='text' placeholder='USERNAME')
+
+                    input#new-password.input.input-password.mb-5(type='text' placeholder='PASSWORD')
+                    
+                    input.btn.btn-orange(type='submit' value='LOGIN')
+                    p.text-center.my-3
+                        a(href="#" class="link link-white") Forgotthen password?
+
+
+        //- * Footers
+        footer.footer-sm
+            p Copyright © 2023. All rights reserved
+
+            

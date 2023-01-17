@@ -1,0 +1,9 @@
+.input{
+    // background-color: var(--text-input-field);
+    border: none;
+    border-radius: $input-border-radius;
+    height: $input-line-height;
+    // font-size: var(--md);
+    padding: $input-padding-y $input-padding-x;
+    margin-bottom: 12px;
+}
