@@ -1,0 +1,26 @@
+@mixin make-container($gutter: $grid-gutter-width) {
+	width: 100%;
+	padding-right: $gutter * .5;
+	padding-left: $gutter * .5;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin colsGenerator($breakpoint, $cols, $prefix){
+	@each $name, $bks in $breakpoint {
+		@media(min-width: $bks){
+			/* OFFSET COLUMNS */
+			@for $i from 1 to $cols + 1 {
+				.#{$prefix}-#{$name}-#{$i}{
+					width: calc(($i * 100) / $cols * 1%);
+				}
+			}
+			/* OFFSET COLUMNS */
+			@for $i from 1 to $cols + 1 {
+				.offset-#{$name}-#{$i}{
+					margin-left: calc((100% * $i) / $cols);
+				}
+			}
+		}
+	}
+}

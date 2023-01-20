@@ -1,0 +1,82 @@
+// @author Yormi Altamiranda
+/// @param {String} $breakpoint
+/// @require $grid-breakpoint
+
+
+
+@function breakpoint-next($name, $breakpoint: $breakpoints, $breakpoint-names: map-keys($breakpoint)) {
+    $n: index($breakpoint-names, $name);
+    @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoint: $breakpoints) {
+    $min: map-get($breakpoint, $name);
+    @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoint: $breakpoints) {
+    $next: breakpoint-next($name, $breakpoint);
+    @return if($next, breakpoint-min($next, $breakpoint) - .02, null);
+}
+
+@function breakpoint-infix($name, $breakpoint: $breakpoints) {
+    @return if(breakpoint-min($name, $breakpoint) == null, "", "-#{$name}");
+}
+
+@mixin respond-up($name, $breakpoint: $breakpoints) {
+    $min: breakpoint-min($name, $breakpoint);
+    @if $min {
+      @media (min-width: $min) {
+        @content;
+      }
+    } @else {
+      @content;
+    }
+}
+@mixin respond-down($name, $breakpoint: $breakpoints) {
+    $max: breakpoint-max($name, $breakpoint);
+    @if $max {
+        @media (max-width: $max) {
+        @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+
+@mixin respond-between($lower, $upper, $breakpoint: $breakpoints) {
+    $min: breakpoint-min($lower, $breakpoint);
+    $max: breakpoint-max($upper, $breakpoint);
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max){
+            @content;
+        }
+    }@else if $max == null{
+        @include respond-up ($lower, $breakpoint){
+            @content;
+        }
+    }@else if $min == null {
+        @include respond-down($upper, $breakpoint){
+            @content;
+        }
+    }
+}
+
+@mixin respond-only($name, $breakpoint: $breakpoints){
+    $min: breakpoint-min($lower, $breakpoint);
+    $max: breakpoint-max($upper, $breakpoint);
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max){
+            @content;
+        }
+    }@else if $max == null{
+        @include respond-up ($name, $breakpoint){
+            @content;
+        }
+    }@else if $min == null {
+        @include respond-down($name, $breakpoint){
+            @content;
+        }
+    }
+}

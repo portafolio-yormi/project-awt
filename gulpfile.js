@@ -33,8 +33,7 @@ function scssTask(){
 // * Task Javascript
 function jsTask(){
 	return src([
-		// 'src/js/jquery.min.js',
-		// 'src/js/owl.carousel.min.js',
+		'src/js/jquery.min.js',
 		'src/js/main.js'
 	])
 	.pipe(concat('bundle.js'))

@@ -1,6 +1,9 @@
-
-//*  Setting Fonts
-$btn-font-family: Arial, Helvetica, sans-serif;
+// Fonts
+@import "config/colors";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$font: 'Poppins', sans-serif;
+// * Setting Fonts
+$btn-font-family: $font;
 $text-aligns: center, left, right, justify;
 
 //*  Setting Fonts
@@ -54,3 +57,30 @@ $spacers: map-merge(
   ),
   $spacers
 );
+
+
+// * System Grid
+$numberCols :					12;
+$gutter: 						1rem;
+$grid-gutter-width:           	30px !default;
+$enable-grid-classes:           true !default;
+
+// * Breakpoints
+$breakpoints: (
+	'xs': 0,
+	'sm': 576px,
+	'md': 768px,
+	'lg': 992px,
+	'xl': 1200px,
+	'xxl': 1440px,
+	) !default;
+
+// * Breakpoints Containers
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1440px,
+	xxxl: 1600px
+) !default;

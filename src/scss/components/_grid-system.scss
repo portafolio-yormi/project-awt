@@ -1,0 +1,70 @@
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	// * Quita los paddings 
+	&.no-gutter [class*=col]{
+		padding: 0;
+	}
+}
+//* Gutter / No Gutter
+[class*=col]{
+	padding: calc($gutter / 2);
+
+	// * Si prefieres algo mas especifico que pueda funcionar en una sola columna
+	// * (esta clase se aplicaría directamente a la columna y no a la fila)
+
+	&.no-gutter{
+		padding: 0;
+	}
+}
+
+@include colsGenerator($breakpoints, $numberCols, 'col');
+
+// Containers
+@if $enable-grid-classes {
+	// * Single container class with breakpoint max-widths
+	.container,
+	// * 100% wide container at all breakpoints
+	.container-fluid {
+	  @include make-container();
+	}
+	  // * Responsive containers that are 100% wide until a breakpoint
+	  @each $breakpoint, $container-max-width in $container-max-widths {
+		.container-#{$breakpoint} {
+		  @extend .container-fluid;
+		}
+
+		@include respond-up($breakpoint, $breakpoints) {
+		  %responsive-container-#{$breakpoint} {
+			max-width: $container-max-width;
+		  }
+
+		  // * Extend each breakpoint which is smaller or equal to the current breakpoint
+		  $extend-breakpoint: true;
+
+		  @each $name, $width in $breakpoints {
+			@if ($extend-breakpoint) {
+			  .container#{breakpoint-infix($name, $breakpoints)} {
+				@extend %responsive-container-#{$breakpoint};
+			  }
+
+			  // * Once the current breakpoint is reached, stop extending
+			  @if ($breakpoint == $name) {
+				$extend-breakpoint: false;
+			  }
+			}
+		  }
+		}
+	  }
+}
+
+
+.container-5{
+    display: flex;
+	align-items: center;
+    justify-content: space-between;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+}

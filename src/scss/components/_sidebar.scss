@@ -1,5 +1,8 @@
 .sidebar{
     position: fixed;
+    top: 0;
+    left: -10%;
+    transition: all 0.5s ease-out;
     width: 10%;
     height: 100vh;
     background: $secondary;
@@ -11,6 +14,10 @@
             margin: 0 auto;
             padding: 30px 0;
         }
+    }
+    &.active{
+        left: 0;
+
     }
     &-wrapper-menu{
         background: $secondary;
@@ -41,6 +48,8 @@
             }
         }
         &-link{
+            font-family: $font;
+            font-weight: 500;
             text-decoration: none;
             color: $white;
             text-transform: uppercase;
