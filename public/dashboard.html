@@ -38,14 +38,18 @@
         <div class="col-lg-6 col-xs-12">
           <div class="bg-secondary p-2">
             <p class="text-white">HEALTH STATE OF THE FABRICS</p>
-          </div><canvas id="doughnut" class="mt-3" style="width:100%;max-width:700px"></canvas>
+          </div>
+          <div class="row"> 
+            <div class="col-lg-10 offset-lg-1"><canvas id="doughnut" class="mt-5" style="width:100%;max-width:700px"></canvas></div>
+          </div>
         </div>
         <div class="col-lg-6 col-xs-12 p-0">
           <div class="row"> 
             <div class="col-lg-12">
               <div class="bg-secondary p-2">
                 <p class="text-white">ACTIVE ALARMS</p>
-              </div><table>
+              </div>
+              <div class="content-table"><table>
 <tr>
 <td>ALARM NAME</td>
 <td>DD/MM/AAA</td>
@@ -72,9 +76,17 @@
 <td>00:00</td>
 </tr>
 </table>
+                <div class="paginator">
+                  <h4 class="paginator-title">ALL ALARM</h4>
+                  <ul class="paginator-list"> 
+                    <li class="paginator-items">1</li>
+                    <li class="paginator-items">10</li>
+                  </ul>
+                </div>
+              </div>
             </div>
             <div class="col-lg-12">
-              <div class="bg-secondary p-2 mt-5">
+              <div class="bg-secondary p-2">
                 <p class="text-white">MOST POWERFUL INTERFACES</p>
               </div><canvas id="scatter" class="mt-3" style="width:100%;max-width:700px"></canvas>
             </div>
@@ -84,6 +96,15 @@
     </div>
     <div class="menuburguer" id="btnBurguer">
       <p>Menu</p>
+    </div>
+    <!--*  Toast Alerts-->
+    <div class="toast">
+      <div class="toast-header">
+        <p>Nombre de Alerta</p><a class="header-toast-close" href="#">Ahora <i class="material-symbols-outlined">close</i></a>
+      </div>
+      <div class="toast-body">
+        <p>Atención, los brindis se apilarán automáticamente</p>
+      </div>
     </div>
   </body>
   <script src="js/bundle.js"></script>

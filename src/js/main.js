@@ -46,3 +46,21 @@ new Chart(mixedChart, {
   }
 });
 
+
+//* Toastify
+
+Toastify({
+  text: "Atención, los brindis se apilarán automáticamente",
+  duration: 3000,
+  destination: "https://github.com/apvarun/toastify-js",
+  newWindow: true,
+  close: true,
+  avatar:"img/avatar.jpg",
+  gravity: "top", // `top` or `bottom`
+  position: "right", // `left`, `center` or `right`
+  stopOnFocus: true, // Prevents dismissing of toast on hover
+  style: {
+    background: "linear-gradient(to right, #00ABDA, #00ABDA)",
+  },
+  onClick: function(){} // Callback after click
+}).showToast()

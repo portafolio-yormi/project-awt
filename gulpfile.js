@@ -34,6 +34,7 @@ function scssTask(){
 function jsTask(){
 	return src([
 		'src/js/jquery.min.js',
+		'src/js/toastify.js',
 		'src/js/main.js'
 	])
 	.pipe(concat('bundle.js'))

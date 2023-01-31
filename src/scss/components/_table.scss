@@ -2,7 +2,10 @@
 
 
 // table style
-
+.content-table{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 table { 
   border-spacing: 1; 
   border-collapse: collapse; 
@@ -11,7 +14,7 @@ table {
   overflow:hidden;
   max-width:800px; 
   width:100%;
-  margin:10px auto;
+  // margin:10px auto;
   position:relative;
   color: $white;
 

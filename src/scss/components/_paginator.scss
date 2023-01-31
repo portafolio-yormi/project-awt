@@ -1,0 +1,21 @@
+.paginator{
+    display: flex;
+    justify-content: space-between;
+    &-title{
+        color: $orange;
+        font-weight: 600;
+    }
+    &-list{
+        list-style: none;        
+    } 
+    &-items{
+        cursor: pointer;
+        color: $white;
+        display: inline-flex;
+        font-size: 13px;
+        + .paginator-items::before{
+            content: '/';
+            padding: 0 5px;
+        }
+    }
+}
