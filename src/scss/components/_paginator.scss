@@ -1,21 +1,42 @@
 .paginator{
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+
     &-title{
         color: $orange;
         font-weight: 600;
+        margin-right: 20px;
     }
     &-list{
-        list-style: none;        
+        list-style: none;
+        display: flex;     
+        align-items: center;
+        background: $blue-dark;
+        border-radius: 30px;
     } 
     &-items{
+        
         cursor: pointer;
         color: $white;
         display: inline-flex;
-        font-size: 13px;
-        + .paginator-items::before{
-            content: '/';
-            padding: 0 5px;
+        font-size: 14px;
+        margin: 0 5px;
+        font-weight: 600;
+        // + .paginator-items::before{
+        //     content: '/';
+        //     padding: 0 5px;
+        // }
+        span{
+            color: $secondary;
         }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .paginator{
+         justify-content: space-between;
+         padding: 20px 10px;
     }
 }

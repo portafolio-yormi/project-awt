@@ -3,6 +3,10 @@ $(document).ready(function () {
     // e.preventDefault();
     const menu = false;
     $(".sidebar").toggleClass("active");
+    $("#main").toggleClass("active-dashboar");
+    if(menu == true){
+      ("span").removeClass("material-symbols-outlined");
+    }
   });
 });
 

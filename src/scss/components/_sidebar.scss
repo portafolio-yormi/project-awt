@@ -1,11 +1,11 @@
 .sidebar{
     position: fixed;
-    top: 0;
-    left: -10%;
+    transform: translateX(-225px);
     transition: all 0.5s ease-out;
     width: 10%;
     height: 100vh;
     background: $secondary;
+    transition: $transition-sm;
     &-logo{
         background: $primary;
         img{
@@ -16,8 +16,8 @@
         }
     }
     &.active{
-        left: 0;
-
+        transform: translateX(0);
+        transition: $transition-sm;
     }
     &-wrapper-menu{
         background: $secondary;
@@ -55,5 +55,31 @@
             text-transform: uppercase;
             margin-left: 10%;
         }
+    }
+}
+
+#main{
+    transition: $transition-sm;
+}
+
+.active-dashboar{
+    padding-left: 225px;
+    transition: $transition-sm;
+}
+
+@media screen and (max-width: 992px) {
+    .sidebar{
+        width: 20%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .sidebar{
+        top: 0;
+        width: 50%;
+        z-index: 5;
+    }
+    .active-dashboar{
+        padding-left: 0;
+        transition: $transition-sm;
     }
 }
