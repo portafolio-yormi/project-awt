@@ -38,7 +38,7 @@ function jsTask(){
 		'src/js/main.js'
 	])
 	.pipe(concat('bundle.js'))
-	.pipe(terser())
+	// .pipe(terser())
 	.pipe(dest('public/js'))
 }
 
